@@ -12,7 +12,7 @@ import java.util.LinkedList;
  */
 public abstract class MSTAlgorithm {
 
-    LinkedList<Edge> MSTresultList;
+    LinkedList<Edge> MSTresultList; // holds all edge objects that make minimum spanning tree
 
     Graph graph;
 
