@@ -14,23 +14,23 @@ import java.util.Scanner;
  */
 public class Graph {
 
-    int verticesNo;
-    int edgeNo;
+    int verticesNo; // total number of vertices in graph
+    int edgeNo; // total number of edges in graph
     Boolean isDigraph = false;
-    LinkedList< Vertex> vertices = new LinkedList<>();
+    LinkedList< Vertex> vertices = new LinkedList<>(); // to store all vertices
 
-    public Graph(int verticesNo, int edgeNo, boolean isDigraph) {
+    public Graph(int verticesNo, int edgeNo, boolean isDigraph) { // constructor with initialization
         this.isDigraph = isDigraph;
     }
 
-    public Graph() {
+    public Graph() { // empty constructor
     }
 
-    public void makeGraph(int Vnum, int Enum) {
+    public void makeGraph(int Vnum, int Enum) { // initializes linked list with vertices that will represent graph
 
-        for (int i = 0; i < Vnum; i++) {
-            vertices.add(createVertex(i + ""));
-            verticesNo++;
+        for (int i = 0; i < Vnum; i++) { // iterates according to the number of vertices
+            vertices.add(createVertex(i + "")); 
+            verticesNo++; // incrememnt number of total vertices in object that represents graph
 
         } //store all vertices 
 
@@ -45,7 +45,7 @@ public class Graph {
 
         }
 
-        // fill rest of edges (to comly with number of edges in file)
+        // fill rest of edges (to comply with number of edges in file)
         for (int i = 0; i < (Enum - (Vnum)); i++) {
             int sourceInd; //random source vertex
             int targetInd;
@@ -95,15 +95,15 @@ public class Graph {
 
     }
 
-    public Vertex createVertex(String label) {
+    public Vertex createVertex(String label) { // creates vertex
         return new Vertex(label);
     }
 
-    public Edge createEdge(Vertex v, Vertex u, int w) {
+    public Edge createEdge(Vertex v, Vertex u, int w) { // creates edge
         return new Edge(v, u, w);
     }
 
-    public Edge addEdge(Vertex v, Vertex u, int w) {
+    public Edge addEdge(Vertex v, Vertex u, int w) { 
 
         Edge newEdge = createEdge(vertices.get(vertices.indexOf(v)), vertices.get(vertices.indexOf(u)), w); //create new edge object between v and u 
 
